@@ -1,14 +1,12 @@
-## Create a VM instance
+## Create a VM instances
 resource "google_compute_instance" "cloud_ui_poc_vm" {
   
-######################
-# Required Arguments #
-######################
+#######################################
+# Required Arguments and Child blocks #
+#######################################
   name                        = "test"
   zone                        = "us-central1-a"
   machine_type                = "n1-standard-1"
-  allow_stopping_for_update   = true
-  tags                        = ["web"]
 
   boot_disk {
     initialize_params {
@@ -29,7 +27,7 @@ resource "google_compute_instance" "cloud_ui_poc_vm" {
 # Optional Arguments  #
 #######################
 
-# allow_stopping_for_update                          = var.allow_stopping_for_update
+allow_stopping_for_update                           = true
 # attached_disk                                      = var.attached_disk
 # can_ip_forward                                     = var.can_ip_forward
 # description                                        = var.description
@@ -45,7 +43,7 @@ resource "google_compute_instance" "cloud_ui_poc_vm" {
 # scheduling                                         = var.scheduling
 # scratch_disk                                       = var.scratch_disk
 # service_account                                    = var.service_account
-# tags                                               = var.tags
+tags                                                 = ["web"]
 # shielded_instance_config                           = var.shielded_instance_config
 # enable_display                                     = var.enable_display
 # resource_policies                                  = var.resource_policies
