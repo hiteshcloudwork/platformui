@@ -1,5 +1,5 @@
 ## Configure the Google Cloud Provider
 provider "google" {
-  project       = "playground-s-11-e5d191ad"
+  project       = "YOUR_PROJECT_ID"
   region        = "us-central1"
   }
