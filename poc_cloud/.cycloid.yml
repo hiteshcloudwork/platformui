@@ -1,0 +1,24 @@
+version: "2"
+name: POC_Cloud
+canonical: poc_cloud
+author: Ravichandran Somasundaram
+status: private
+description: Cloud POC Project
+image: ""
+keywords:
+- UI_poc
+- provider:aws
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies: []
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
