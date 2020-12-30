@@ -22,3 +22,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      poc_cloud:
+        destination: ($ project $)/default/terraform/($ environment $)/poc_cloud.tf
+        path: default/terraform/poc_cloud.tf.sample
