@@ -23,13 +23,10 @@ resource "google_compute_firewall" "default" {
 
   source_tags = ["web"]
 
-# allow                         = var.allow
-# deny                          = var.deny
 # description                   = var.description
 # destination_ranges            = var.destination_ranges
 # direction                     = var.direction
 # disabled                      = var.disabled
-# log_config                    = var.log_config
 # priority                      = var.priority
 # source_ranges                 = var.source_ranges
 # source_service_accounts       = var.source_service_accounts
@@ -39,16 +36,30 @@ resource "google_compute_firewall" "default" {
 # project                       = var.project
 # enable_logging                = var.enable_logging
 
+
 // The allow block supports:
-# protocol                      = var.protocol #Required
-# ports                         = var.ports
+/*
+  allow {
+    protocol                      = var.protocol #Required
+    ports                         = var.ports
+  }
+*/
 
 
 // The deny block supports:
-# protocol                      = var.protocol #Required
-# ports                         = [var.ports]
+/*
+  deny {
+    protocol                      = var.protocol #Required
+    ports                         = var.ports
+  }
+*/
 
 
 // The log_config block supports:
-# metadata        = var.metadata #Required
+/*
+  log_config {
+    metadata        = var.metadata #Required
+  }
+*/
+
 }
