@@ -3,7 +3,6 @@
  variable "initialize_params"            { default = "" }
  variable "scratch_disk"                 { default = "" }
  variable "attached_disk"                { default = "" }
- variable "network_interface"            { default = "" }
  variable "access_config"                { default = "" }
  variable "alias_ip_range"               { default = "" }
  variable "scheduling"                   { default = "" }
