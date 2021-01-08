@@ -1,6 +1,5 @@
 ## Infrastructure variables
  variable "boot_disk"                    { default = "" }
- variable "initialize_params"            { default = "" }
  variable "scratch_disk"                 { default = "" }
  variable "attached_disk"                { default = "" }
  variable "access_config"                { default = "" }
@@ -84,14 +83,10 @@ tags                                                 = ["web"]
       
 // The initialize_params block supports:
 /*
-  dynamic "initialize_params" {
-    for_each = var.initialize_params != "" ? [1] : []
-    
-    content {
+  initialize_params {    
       size                                           = var.size
       type                                           = var.type
       image                                          = var.image
-      }
     }
 */
 
@@ -130,7 +125,7 @@ tags                                                 = ["web"]
           network_ip                                         = var.network_ip
           access_config                                      = var.access_config
           alias_ip_range                                     = var.alias_ip_range
-          }
+      }
 */
 
 // The access_config block supports:
