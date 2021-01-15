@@ -13,7 +13,7 @@ resource "google_compute_instance" "cloud_ui_poc_vm" {
   }
 
   network_interface {
-    network = google_compute_network.cloud_ui_poc_network.self_link
+    subnetwork = google_compute_subnetwork.cloud_ui_poc_subnetwork.self_link
   }
 
   service_account {
