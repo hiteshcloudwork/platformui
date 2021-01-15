@@ -1,9 +1,9 @@
 ## Create a firewall rule
 resource "google_compute_firewall" "default" {
 
-#######################
-# Required Arguments ##
-#######################
+######################
+# Required Arguments #
+######################
   
   name    = "test-firewall"
   network = google_compute_network.cloud_ui_poc_network.name
