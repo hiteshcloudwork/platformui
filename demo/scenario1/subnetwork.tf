@@ -4,14 +4,14 @@ resource "google_compute_subnetwork" "cloud_ui_poc_subnetwork" {
 ######################
 # Required Arguments #
 ######################
-  name                                         = "poc-subnetwork"
+  name                                         = "cloud-ui-subnet-poc-01"
   ip_cidr_range                                = "10.2.0.0/16"
   network                                      = google_compute_network.cloud_ui_poc_network.id
   
 ######################
 # Optional Arguments #
 ######################
-  region        = "us-central1"
+  region                                       = "us-central1"
 # description                                  = var.description
 # purpose                                      = var.purpose
 # role                                         = var.role
