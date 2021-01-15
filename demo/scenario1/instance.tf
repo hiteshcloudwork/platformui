@@ -4,14 +4,12 @@ resource "google_compute_instance" "cloud_ui_poc_vm" {
 #######################################
 # Required Arguments and Child blocks #
 #######################################
-  name                        = "test"
+  name                        = "Cloud-UI-POC"
   zone                        = "us-central1-a"
   machine_type                = "n1-standard-1"
 
   boot_disk {
-    initialize_params {
-      image = "rhel-cloud/rhel-7"
-    }
+    source = google_compute_disk.t-compute-disk.self_link
   }
 
   network_interface {
