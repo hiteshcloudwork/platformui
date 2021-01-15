@@ -1,7 +1,7 @@
 ## Create a persistent disk
 
 data "google_compute_image" "t-compute-image" {
-    family  = "rhel-cloud"
+    family  = "rhel-7"
     project = "direct-blend-298007"
 }
 
