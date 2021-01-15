@@ -4,7 +4,7 @@ resource "google_compute_instance" "cloud_ui_poc_vm" {
 #######################################
 # Required Arguments and Child blocks #
 #######################################
-  name                        = "Cloud-UI-POC"
+  name                        = "cloud-ui-poc-02"
   zone                        = "us-central1-a"
   machine_type                = "n1-standard-1"
 
