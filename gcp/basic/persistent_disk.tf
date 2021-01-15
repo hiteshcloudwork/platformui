@@ -6,7 +6,7 @@ data "google_compute_image" "t-compute-image" {
 }
 
 resource "google_compute_disk" "t-compute-disk" {
-    name                        = var.instance_template_name}-vol
+    name                        = "${var.instance_template_name}-vol"
 
 #####################################
 # Optional Arguments & Child blocks #
