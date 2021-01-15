@@ -1,5 +1,5 @@
 ## Configure the Google Cloud Provider
 provider "google" {
-  project       = "YOUR_PROJECT_ID"
+  project       = "direct-blend-298007"
   region        = "us-central1"
   }

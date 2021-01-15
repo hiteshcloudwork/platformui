@@ -5,7 +5,7 @@ resource "google_compute_firewall" "default" {
 # Required Arguments #
 ######################
   
-  name    = "test-firewall"
+  name    = "cloud-ui-firewall-poc"
   network = google_compute_network.cloud_ui_poc_network.name
 
 ######################
@@ -23,10 +23,13 @@ resource "google_compute_firewall" "default" {
 
   source_tags = ["web"]
 
+# allow                         = var.allow
+# deny                          = var.deny
 # description                   = var.description
 # destination_ranges            = var.destination_ranges
 # direction                     = var.direction
 # disabled                      = var.disabled
+# log_config                    = var.log_config
 # priority                      = var.priority
 # source_ranges                 = var.source_ranges
 # source_service_accounts       = var.source_service_accounts
@@ -36,30 +39,16 @@ resource "google_compute_firewall" "default" {
 # project                       = var.project
 # enable_logging                = var.enable_logging
 
-
 // The allow block supports:
-/*
-  allow {
-    protocol                      = var.protocol #Required
-    ports                         = var.ports
-  }
-*/
+# protocol                      = var.protocol #Required
+# ports                         = var.ports
 
 
 // The deny block supports:
-/*
-  deny {
-    protocol                      = var.protocol #Required
-    ports                         = var.ports
-  }
-*/
+# protocol                      = var.protocol #Required
+# ports                         = [var.ports]
 
 
 // The log_config block supports:
-/*
-  log_config {
-    metadata        = var.metadata #Required
-  }
-*/
-
+# metadata        = var.metadata #Required
 }

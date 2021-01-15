@@ -1,12 +1,12 @@
 ## Create a persistent disk
 
 data "google_compute_image" "t-compute-image" {
-    family  = var.source_image_family
-    project = var.source_image_project
+    family  = "rhel-7"
+    project = "rhel-cloud"
 }
 
 resource "google_compute_disk" "t-compute-disk" {
-    name                        = "${var.instance_template_name}-vol"
+  name                          = "cloud-ui-poc-vol"
 
 #####################################
 # Optional Arguments & Child blocks #
@@ -15,7 +15,7 @@ resource "google_compute_disk" "t-compute-disk" {
   size                          = 60
   type                          = "pd-ssd"
   image                         = data.google_compute_image.t-compute-image.self_link
-  zone                          = var.compute_disk_zone
+  zone                          = "us-central1-a"
 # description                   = var.description
 # labels                        = var.labels
 # physical_block_size_bytes     = var.physical_block_size_bytes
