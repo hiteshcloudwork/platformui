@@ -5,7 +5,7 @@ resource "google_compute_firewall" "default" {
 # Required Arguments #
 ######################
   
-  name    = "test-firewall"
+  name    = "cloud-ui-firewall-poc"
   network = google_compute_network.cloud_ui_poc_network.name
 
 ######################
