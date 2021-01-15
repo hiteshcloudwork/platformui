@@ -4,7 +4,7 @@ resource "google_compute_network" "cloud_ui_poc_network" {
 ######################
 # Required Arguments #
 ######################
-  name                                 = "cloud-ui-poc-01"
+  name                                 = "cloud-ui-poc-02"
 
 ######################
 # Optional Arguments #
