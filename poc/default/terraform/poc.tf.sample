@@ -1,0 +1,9 @@
+module "tf-poc" {
+  source = "module-poc"
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}
