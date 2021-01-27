@@ -6,9 +6,9 @@ resource "google_dns_managed_zone" "example" {
 # Required Arguments #
 ######################
 
-  name     = "example"
-  dns_name = "example.com."
-  
+  name     = "cloudui"
+  dns_name = "cloudui.com."
+
 #######################
 # Optional Arguments  #
 #######################
@@ -32,12 +32,13 @@ resource "google_dns_managed_zone" "example" {
     kind                                               = var.kind
     non_existence                                      = var.non_existence
     state                                              = var.state
+
     default_key_specs {
-	  algorithm                                        = var.algorithm
+      algorithm                                        = var.algorithm
       key_length                                       = var.key_length
       key_type                                         = var.key_type
       kind                                             = var.kind
-	}
+        }
 }
 */
 
@@ -65,14 +66,14 @@ resource "google_dns_managed_zone" "example" {
 
 // The namespace block supports:
 # namespace_url                                         = var.namespace_url
-  
+
 }
 
 resource "google_dns_record_set" "example" {
   managed_zone = google_dns_managed_zone.example.name
   name    = "www.${google_dns_managed_zone.example.dns_name}"
   type    = "A"
-  rrdatas = var.rrdatas
+  rrdatas = ["8.8.8.8"]
   ttl     = 300
 # project = var.project
 }
