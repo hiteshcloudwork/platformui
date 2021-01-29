@@ -1,2 +1,2 @@
 terraform: 
-  tfPath: /home/mgmtbld/decoder/demo/scenario_02
+  tfPath: "/home/mgmtbld/decoder/demo/scenario_02"
