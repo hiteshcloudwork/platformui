@@ -1,2 +1,2 @@
-terraform: 
+Terraform: 
     tfPath: "/home/mgmtbld/decoder/demo/scenario_02"
