@@ -98,7 +98,7 @@
  } 
   }
  resource "google_compute_region_instance_group_manager" "cloud_ui_poc_mig" { 
- name = substr("my-mig-${md5(google_compute_instance_template.template.name)}", 0, 63)
+ name = substr("my-mig-${md5(google_compute_instance_template.template.name_prefix)}", 0, 63)
  region = "us-central1"
  base_instance_name = "mig-instance"
  target_size = 1
@@ -113,13 +113,13 @@
  }
  # Create a SQL Database and DB instance
  resource "google_sql_database_instance" "db_instance" {
- name = "postgresmaster1"
+ name = "postgresmaster2"
  database_version = "POSTGRES_11" 
  
  settings { 
  tier = "db-f1-micro" 
  }
-  deletion_protection = "true" 
+  deletion_protection = "false" 
  }
  resource "google_sql_database" "database" { 
  name = "user"
