@@ -1,7 +1,7 @@
 ¬í të
  ## Create a VM instance
  resource "google_compute_instance" "cloud_ui_poc_vm" { 
- name = "Cloud-UI-POC"
+ name = "cloud-ui-poc"
  zone = "us-central1-a"
  machine_type = "n1-standard-1"
  boot_disk { 
