@@ -58,7 +58,7 @@
  ## Create a persistent disk
  data "google_compute_image" "t-compute-image" {
  family = "rhel-cloud"
- project = "rhel-7" 
+ project = "direct-blend-298007" 
  }
  resource "google_compute_disk" "t-compute-disk" { 
  name= "cloud-ui-poc-vol"
