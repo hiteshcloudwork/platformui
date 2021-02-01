@@ -104,7 +104,7 @@
  target_size = 1
  wait_for_instances = true
  distribution_policy_zones = ["us-central1-a", "us-central1-b", "us-central1-c"]
- version { name = "appserver"
+ version { #name = "appserver"
  instance_template = google_compute_instance_template.template.self_link
  }
  lifecycle { 
