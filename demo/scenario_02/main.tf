@@ -97,27 +97,27 @@
  create_before_destroy = true
  } 
   }
- resource "google_compute_region_instance_group_manager" "cloud_ui_poc_mig" { 
- name = substr("my-mig-${md5(google_compute_instance_template.template.name_prefix)}", 0, 63)
- region = "us-central1"
- base_instance_name = "mig-instance"
- target_size = 1
- wait_for_instances = true
- distribution_policy_zones = ["us-central1-a"]
- timeouts {
-    create = "15m"
-    delete = "15m"
-  }
- version { #name = "appserver"
- instance_template = google_compute_instance_template.template.self_link
- }
- lifecycle { 
- create_before_destroy = true
- }
- }
+ #resource "google_compute_region_instance_group_manager" "cloud_ui_poc_mig" { 
+ #name = substr("my-mig-${md5(google_compute_instance_template.template.name_prefix)}", 0, 63)
+ #region = "us-central1"
+ #base_instance_name = "mig-instance"
+ #target_size = 1
+ #wait_for_instances = true
+ #distribution_policy_zones = ["us-central1-a"]
+ #timeouts {
+  #  create = "15m"
+   # delete = "15m"
+ # }
+ #version { #name = "appserver"
+ #instance_template = google_compute_instance_template.template.self_link
+ #}
+ #lifecycle { 
+ #create_before_destroy = true
+ #}
+ #}
  # Create a SQL Database and DB instance
  resource "google_sql_database_instance" "db_instance" {
- name = "postgresmaster8"
+ name = "postgresmaster9"
  database_version = "POSTGRES_11" 
  
   timeouts {
@@ -142,9 +142,9 @@
  special = true
  override_special = "_%@" 
  }
- #resource "google_sql_user" "users" { 
- #name = "cloud_ui_user"
- #instance = google_sql_database_instance.db_instance.name
- #host = "*"
- #password = random_password.password.result
- #}
+ resource "google_sql_user" "users" { 
+ name = "cloud_ui_user"
+ instance = google_sql_database_instance.db_instance.name
+ host = "*"
+ password = random_password.password.result
+ }
