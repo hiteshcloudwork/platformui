@@ -113,7 +113,7 @@
  }
  # Create a SQL Database and DB instance
  resource "google_sql_database_instance" "db_instance" {
- name = "postgresmaster4"
+ name = "postgresmaster5"
  database_version = "POSTGRES_11" 
  
  settings { 
