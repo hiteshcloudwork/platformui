@@ -117,7 +117,7 @@
  }
  # Create a SQL Database and DB instance
  resource "google_sql_database_instance" "db_instance" {
- name = "postgresmaster7"
+ name = "postgresmaster8"
  database_version = "POSTGRES_11" 
  
   timeouts {
