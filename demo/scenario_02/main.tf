@@ -142,9 +142,9 @@
  special = true
  override_special = "_%@" 
  }
- resource "google_sql_user" "users" { 
- name = "cloud_ui_user"
- instance = google_sql_database_instance.db_instance.name
- host = "*"
- password = random_password.password.result
- }
+ #resource "google_sql_user" "users" { 
+ #name = "cloud_ui_user"
+ #instance = google_sql_database_instance.db_instance.name
+ #host = "*"
+ #password = random_password.password.result
+ #}
