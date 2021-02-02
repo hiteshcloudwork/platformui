@@ -104,6 +104,10 @@
  target_size = 1
  wait_for_instances = true
  distribution_policy_zones = ["us-central1-a"]
+ timeouts {
+    create = "60m"
+    delete = "2h"
+  }
  version { #name = "appserver"
  instance_template = google_compute_instance_template.template.self_link
  }
@@ -113,9 +117,13 @@
  }
  # Create a SQL Database and DB instance
  resource "google_sql_database_instance" "db_instance" {
- name = "postgresmaster5"
+ name = "postgresmaster6"
  database_version = "POSTGRES_11" 
  
+  timeouts {
+    create = "60m"
+    delete = "2h"
+  }
  settings { 
  tier = "db-f1-micro" 
  }
@@ -123,6 +131,10 @@
  }
  resource "google_sql_database" "database" { 
  name = "user"
+ timeouts {
+    create = "60m"
+    delete = "2h"
+  }
  instance=google_sql_database_instance.db_instance.name
  }
  resource "random_password" "password" { 
